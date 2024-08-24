@@ -3,5 +3,24 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Java home work</display-name>
+  <servlet>
+    <servlet-name>homeServlet</servlet-name>
+    <servlet-class>itstep.learning.servlets.HomeServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>LogServlet</servlet-name>
+    <servlet-class>itstep.learning.servlets.LogServlet</servlet-class>
+  </servlet>
+  <!--мапаем сервлет-->
+  <servlet-mapping>
+    <servlet-name>homeServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>LogServlet</servlet-name>
+    <url-pattern>/log</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -74,13 +74,13 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<article class="container">
     <!-- Content here -->
     <jsp:include page="<%=pageBody%>"/>
-</div>
-
+</article>
+<div class="spacer"></div>
 <footer class="footer">
-    <img src="" alt="Logo" style="float: left; width: 50px; height: auto;">
+    <img src="<%=contextPath%>/img/footer.jpg" alt="Logo" class="d-inline-block align-text-top">
     <p>&copy; 2024 Your Website. All rights reserved.</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
