@@ -1,5 +1,7 @@
 package itstep.learning.servlets;
 
+import com.google.inject.Singleton;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/logs")
+@Singleton
+//@WebServlet("/logs")
 public class LogServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:mysql://localhost:3308/JAVA_HMW?useUnicode=true&characterEncoding=utf8";
     private static final String DB_USER = "admin";
