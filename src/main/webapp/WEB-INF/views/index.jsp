@@ -42,3 +42,20 @@ String basicPassword = (String) request.getAttribute("basicPassword");
     <img src="https://www.pngkey.com/png/detail/964-9648243_gta-sticker-mission-passed-respect-transparent.png" alt="Gta Sticker - Mission Passed Respect Transparent@pngkey.com">
     <img src="<%=contextPath%>/img/complete.webp" alt="complete">
 </div>
+
+
+<form id="signup-form" action="<%=contextPath%>/user">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Name</span>
+        <input name="userName" type="text" class="form-control" placeholder="Username" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Email</span>
+        <input name="userEmail" type="text" class="form-control" placeholder="Email" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Password</span>
+        <input name="userPassword" type="password" class="form-control"  >
+    </div>
+    <button class="btn btn-primary">Sign Up</button>
+</form>
