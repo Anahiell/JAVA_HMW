@@ -1,6 +1,8 @@
 package itstep.learning.data.dto;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.UUID;
 
@@ -8,7 +10,7 @@ public class User {
     private UUID id;
     private String name;
     private String email;
-    private String password;
+    private String passwordHash;
     private Date deleteDt;
 
     public User() {
@@ -19,10 +21,10 @@ public class User {
             setId(UUID.fromString(rs.getString("id")));
             setName(rs.getString("name"));
             setEmail(rs.getString("email"));
-            setPassword(rs.getString("password"));
-            setDeleteDt(new Date(rs.getLong("delete_dt")));
-        }
-        catch (Exception ex) {
+            setPasswordHash(rs.getString("password"));
+            Timestamp timestamp = rs.getTimestamp("deleteDt");
+            setDeleteDt(timestamp != null ? new Date(timestamp.getTime()) : null);
+        } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
     }
@@ -51,12 +53,13 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordHash() {
+        return passwordHash;
+
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 
     public Date getDeleteDt() {

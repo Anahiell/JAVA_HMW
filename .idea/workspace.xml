@@ -11,28 +11,24 @@
   <component name="ChangeListManager">
     <list default="true" id="f43b3da6-8397-48fe-aa75-1096a4aa7660" name="Changes" comment="add CORS filter and update logs">
       <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dal/PageVisitDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dal/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dto/PageVisit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dto/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/filters/CorsFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/DbModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/services/hash/HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/services/hash/Md5HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/filters/UserFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/SignInServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/UserServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dal/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dal/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/data/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/filters/CharsetFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/filters/CharsetFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/IocContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/IocContextListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/ServiceModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/ServiceModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/WebModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/WebModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/DbServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/DbServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/services/hash/HashService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/services/hash/HashService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/LogServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/servlets/LogServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/_layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/_layout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/logs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/logs.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/wtf.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/wtf.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,9 +102,10 @@
       <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp\img" />
       <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp" />
-      <recent name="C:\Users\Professional\IdeaProjects\untitled1\src\main\webapp\WEB-INF\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -222,6 +219,7 @@
       <workItem from="1724656461798" duration="8630000" />
       <workItem from="1725084974519" duration="4000" />
       <workItem from="1725793404377" duration="11927000" />
+      <workItem from="1726138070919" duration="27522000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

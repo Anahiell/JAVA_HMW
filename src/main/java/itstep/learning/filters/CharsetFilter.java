@@ -2,6 +2,7 @@ package itstep.learning.filters;
 
 import com.google.inject.Singleton;
 import itstep.learning.ColorCT;
+import itstep.learning.data.dal.PageVisitDao;
 
 import javax.servlet.*;
 import java.io.IOException;

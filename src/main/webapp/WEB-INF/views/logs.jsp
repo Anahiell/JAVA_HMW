@@ -1,6 +1,7 @@
 
 <%@ page import="itstep.learning.servlets.LogServlet" %>
 <%@ page import="java.util.List" %>
+<%@ page import="itstep.learning.data.dto.PageVisit" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="container">
     <h1>Visit Log</h1>
@@ -14,13 +15,13 @@
         </thead>
         <tbody>
         <%
-            List<itstep.learning.servlets.LogServlet.Visit> visits = (List<LogServlet.Visit>) request.getAttribute("visits");
+            List<PageVisit> visits = (List<PageVisit>) request.getAttribute("visits");
             if (visits != null && !visits.isEmpty()) {
-                for (itstep.learning.servlets.LogServlet.Visit visit : visits) {
+                for (PageVisit visit : visits) {
         %>
         <tr>
             <td><%= visit.getId() %></td>
-            <td><%= visit.getVisitTime() %></td>
+            <td><%= visit.getVisitDate() %></td>
             <td><%= visit.getPageUrl() %></td>
         </tr>
         <%

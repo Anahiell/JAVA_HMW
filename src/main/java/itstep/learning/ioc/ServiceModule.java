@@ -3,6 +3,8 @@ package itstep.learning.ioc;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 import itstep.learning.services.generators.*;
+import itstep.learning.services.hash.HashService;
+import itstep.learning.services.hash.Md5HashService;
 
 public class ServiceModule  extends AbstractModule {
 
@@ -22,5 +24,7 @@ public class ServiceModule  extends AbstractModule {
         bind(GeneratorService.class)
                 .annotatedWith(Names.named("password"))
                 .to(BasicPasswordGeneratorService.class);
+        bind(HashService.class).annotatedWith(Names.named("Md5"))
+                .to(Md5HashService.class);
     }
 }

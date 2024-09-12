@@ -1,3 +1,5 @@
+<%@ page import="itstep.learning.data.dto.User" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
     String contextPath = request.getContextPath();
@@ -5,6 +7,10 @@ String basicPassword = (String) request.getAttribute("basicPassword");
     String fasol = (String) request.getAttribute("fasol");
     String fileName = (String) request.getAttribute("fileName");
     String otp = (String) request.getAttribute("otp");
+    List<User> users = (List<User>) request.getAttribute("users");
+
+    HttpSession ses = request.getSession(false);
+    String role = (ses != null) ? (String) session.getAttribute("role") : "";
 
 %>
 <style>
@@ -20,42 +26,60 @@ String basicPassword = (String) request.getAttribute("basicPassword");
         height: auto; /* Сохраняем пропорции */
     }
 </style>
-<div class="container mt-5">
-    <h2 class="text-center">Hello World!</h2>
-    <p class="text-center">Welcome to our website. Here you can find information about our services and database.</p>
-    <p class="text-center">Explore the links in the navigation bar to learn more.</p>
+<% if ("admin".equals(role)) { %>
+<div class="forAdmin">
+    <h2>Список пользователей:</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Пароль (хеш)</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if (users != null) {
+            for (User user : users) { %>
+        <tr>
+            <td><%= user.getId() %></td>
+            <td><%= user.getName() %></td>
+            <td><%= user.getEmail() %></td>
+            <td><%= user.getPasswordHash() %></td>
+            <td>
+                <!-- Кнопка удаления -->
+                <form action="<%=contextPath%>/user" method="get" style="display:inline;">
+                    <input type="hidden" name="userId" value="<%= user.getId() %>">
+                    <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                </form>
+            </td>
+        </tr>
+        <% } } %>
+        </tbody>
+    </table>
+    <form id="signup-form" action="<%=contextPath%>/user" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input name="userName" type="text" class="form-control" placeholder="Username" >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Email</span>
+            <input name="userEmail" type="text" class="form-control" placeholder="Email" >
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Password</span>
+            <input name="userPassword" type="password" class="form-control" >
+        </div>
+        <button class="btn btn-primary">Sign Up</button>
+    </form>
 </div>
-<div>
-<h3>EXAmPL of GENERATORS</h3>
-    <ul>
-        <li><strong>- для імені файлу (символи нижнього реєстру, не містить спец.символів / *?.\)
-        </strong>: <%=fileName%></li>
-        <li><strong>- для криптографічної солі - без обмежень
-        </strong>: <%=fasol%></li>
-        <li><strong>- для ОТР (one time password) - тільки цифри з довжиною 6 символів
-        </strong>: <%=otp%></li>
-        <li><strong>- для постійних паролів - те, що можна набрати з клавіатури (маленькі, великі,
-            спец.символи)</strong>: <%=basicPassword%></li>
-    </ul>
-</div>
+<% } else %><%{%>
+    <h3>Whis is site!!!!</h3>
+<%} %>
 <div class="img-container">
     <img src="https://www.pngkey.com/png/detail/964-9648243_gta-sticker-mission-passed-respect-transparent.png" alt="Gta Sticker - Mission Passed Respect Transparent@pngkey.com">
     <img src="<%=contextPath%>/img/complete.webp" alt="complete">
 </div>
 
 
-<form id="signup-form" action="<%=contextPath%>/user">
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Name</span>
-        <input name="userName" type="text" class="form-control" placeholder="Username" >
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon2">Email</span>
-        <input name="userEmail" type="text" class="form-control" placeholder="Email" >
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">Password</span>
-        <input name="userPassword" type="password" class="form-control"  >
-    </div>
-    <button class="btn btn-primary">Sign Up</button>
-</form>
